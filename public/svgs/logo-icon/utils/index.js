@@ -179,19 +179,25 @@ function getIconAnimation({ isResized }) {
 }
 function onDragEnd({ drag }) {
   drag(false);
+  const { moveAccountBack } = AccountStore();
+  const { putBack: moveStorage } = StorageStore();
+  const { putBack: movePricing } = PricingStore();
   if (initResized) {
-    const { moveAccountBack } = AccountStore();
-    const { putBack: moveStorage } = StorageStore();
-    const { putBack: movePricing } = PricingStore();
+    const { putShow: showHeader } = HeaderStore();
     moveAccountBack(true);
     moveStorage(true);
     movePricing(true);
-  }
-  if (initResized) {
-    const { putShow: showHeader } = HeaderStore();
     showHeader(true);
   }
-  const { putView, initScene } = MainStore();
+  const { putView, initScene, initView } = MainStore();
+  if (initView === "account") {
+    moveAccountBack((old) => !old);
+  } else if (initView === "storage") {
+    moveStorage((old) => !old);
+  } else if (initView === "pricing") {
+    movePricing((old) => !old);
+  }
+
   putResize((old) => {
     const { putResize: resizeLogo } = LogoStore();
     if (initScene === "home") {
