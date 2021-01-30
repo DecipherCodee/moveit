@@ -1,0 +1,42 @@
+.menu {
+  @import "../../../../styles";
+  @include box-styles;
+  @include set-layout($mobile-width, min-width) {
+    padding: 3rem 0;
+    border: none;
+    flex-direction: column;
+    height: 0;
+    width: 5rem;
+    opacity: 0;
+    transition: opacity 0.8s ease, height 0.8s ease;
+    &.show {
+      height: 90vh;
+      opacity: 1;
+      transition: opacity 0.8s ease, height 0.8s ease;
+    }
+  }
+  @include set-layout($mobile-width) {
+    padding: 0 2rem;
+    height: 5rem;
+    width: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease, width 0.8s ease;
+    &.show {
+      width: 90vw;
+      opacity: 1;
+      transition: opacity 0.8s ease, width 0.8s ease;
+    }
+  }
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $reddy-brown;
+
+  .separator {
+    height: 6.4px;
+    width: 6.4px;
+    background: $puce;
+    border-radius: 50%;
+  }
+}

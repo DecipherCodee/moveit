@@ -1,0 +1,23 @@
+@import "styles/default";
+
+#app {
+  @include set-layout($mobile-width, min-width) {
+    justify-content: center;
+  }
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 100vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  color: $sand-brown;
+  opacity: 0;
+  animation: fadeInApp 0.4s ease forwards;
+  @keyframes fadeInApp {
+    100% {
+      opacity: 1;
+    }
+  }
+}

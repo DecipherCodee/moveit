@@ -1,0 +1,69 @@
+.logoIcon {
+  @import "styles/mixins";
+  cursor: pointer;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.7));
+  z-index: 1;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    transform: scale(1);
+    transition: transform ease 0.8s;
+    &.drag {
+      transform: scale(0.6);
+      transition: transform ease 0.8s;
+    }
+
+    @mixin frame-styles {
+      height: 40vh;
+      width: 30vw;
+      margin-top: -4vw;
+      fill: $carmine;
+      stroke: $chilean-fire;
+
+      @include set-layout($tab-width) {
+        height: 50vh;
+        width: 40vw;
+      }
+      @include set-layout($mobile-width) {
+        height: 60vh;
+        width: 50vw;
+      }
+      @include set-layout($cell-width) {
+        height: 70vh;
+        width: 60vw;
+      }
+    }
+
+    .frame {
+      @include frame-styles();
+    }
+    .drone {
+      fill: $chilean-fire;
+      position: absolute;
+      display: flex;
+      align-self: center;
+      height: 12vh;
+      width: 7vw;
+      animation: spin 10s linear infinite;
+
+      @include set-layout($tab-width) {
+        height: 22vh;
+        width: 10vw;
+      }
+      @include set-layout($mobile-width) {
+        height: 32vh;
+        width: 13vw;
+      }
+      @include set-layout($cell-width) {
+        height: 42vh;
+        width: 16vw;
+      }
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+}

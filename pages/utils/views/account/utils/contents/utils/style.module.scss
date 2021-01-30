@@ -1,0 +1,14 @@
+.contents {
+  @import "../../../../../styles";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+
+  
+  .section {
+    @include section-styles();
+  }
+}

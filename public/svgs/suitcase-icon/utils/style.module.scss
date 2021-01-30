@@ -1,0 +1,8 @@
+.suitcase {
+  @import "../../styles";
+  @include svg-styles($isPrice: true);
+
+  svg {
+    stroke: $hawaiian-sunset;
+  }
+}

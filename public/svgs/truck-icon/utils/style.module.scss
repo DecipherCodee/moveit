@@ -1,0 +1,14 @@
+.svg {
+  @import "../../styles";
+  @include svg-styles;
+
+  svg {
+    height: 2rem;
+    width: 2rem;
+
+    .arrow,
+    .wheel {
+      fill: $puce;
+    }
+  }
+}

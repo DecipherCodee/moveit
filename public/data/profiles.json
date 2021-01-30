@@ -1,0 +1,14 @@
+[
+  {
+    "username": "ebukaa",
+    "password": "mas",
+    "address": {
+      "home": "14 Beeley Street, London Court",
+      "city": "Sheffield",
+      "postcode": "S2 4LP"
+    },
+    "email": "ebukaa@protonmail.com",
+    "phone": "mobile-test",
+    "hash": "hash-test"
+  }
+]

@@ -1,0 +1,22 @@
+.auth {
+  @import "../../../../../styles";
+  @include view-styles(fadeInAuth, fadeOutAuth);
+  flex-direction: column;
+
+  .username {
+    @include input-styles();
+  }
+  .submit {
+    @include box-styles;
+    margin-top: 2.8rem;
+    margin-bottom: 2rem;
+    width: 40%;
+    border: solid $terra-cotta 2px;
+    align-self: center;
+    height: 4rem;
+    &:hover {
+      border-color: $reddy-brown;
+      background: $reddy-brown;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+.account {
+  @import "../../../styles";
+  @include view-styles(fadeInAccount, fadeOutAccount, $isView: false);
+}
