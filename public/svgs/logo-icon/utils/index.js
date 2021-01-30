@@ -183,6 +183,9 @@ function onTouchMove({ clientX, clientY }) {
 function getIconAnimation({ isResized }) {
   return isResized ? "resized" : "normal";
 }
+function onDragEnd({ drag }) {
+  drag(false);
+}
 
 export const useStore = () => {
   const [isResized, resize] = useState(false);
@@ -205,7 +208,7 @@ export const useStore = () => {
   return {
     wrapperStyles: getWrapperStyles({ isDragged }),
     appRef,
-    increaseSize: increaseSize.bind(null, { drag: putDrag }),
+    onDragEnd: onDragEnd.bind(null, { drag: putDrag }),
     reduceSize: reduceSize.bind(null, {
       isResized: initResized,
       isDragged: initDragged,
