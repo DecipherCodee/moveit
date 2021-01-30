@@ -1,0 +1,27 @@
+@import "../../styles";
+
+.svg {
+  @include svg-styles;
+
+  svg {
+    &:hover {
+      .top {
+        fill: $puce;
+      }
+      .leftHoles {
+        fill: $reddy-brown;
+      }
+    }
+
+    .lines {
+      fill: $puce;
+    }
+  }
+}
+.pricing {
+  @include svg-styles($isPrice: true);
+  
+  .lines {
+    fill: $hawaiian-sunset;
+  }
+}

@@ -1,0 +1,12 @@
+.password {
+  @import "../../../../../../../styles";
+  @include input-styles();
+  height: 0;
+  opacity: 0;
+  transition: height ease 0.4s, opacity ease 0.4s;
+  &.show {
+    opacity: 1;
+    height: 3rem;
+    transition: height ease 0.4s, opacity ease 0.4s;
+  }
+}

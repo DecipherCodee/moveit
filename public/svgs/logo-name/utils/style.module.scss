@@ -1,0 +1,28 @@
+.logoName {
+  @import "styles/mixins";
+  @include set-layout($mobile-width) {
+    position: absolute;
+    align-self: center;
+    bottom: -12vw;
+    height: 15vw;
+  }
+  @include set-layout($mobile-width - 250px) {
+    position: absolute;
+    align-self: center;
+    bottom: -1vw;
+    height: 15vw;
+  }
+  @include set-layout($cell-width) {
+    position: absolute;
+    align-self: center;
+    bottom: 15vw;
+    height: 15vw;
+  }
+  @include set-layout($mobile-width,min-width) {
+    margin-right: 0.8rem;
+  }
+
+  height: 8vw;
+  margin: auto;
+  fill: $sand-brown;
+}

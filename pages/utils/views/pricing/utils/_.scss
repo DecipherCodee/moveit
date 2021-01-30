@@ -1,0 +1,25 @@
+// excess height to improve interactive area / accessibility
+  $height: 30px;
+  $thumb-height: 18px;
+  $track-height: 5px;
+  // colours
+  $upper-color: #cfcfcf;
+  $lower-color: $terra-cotta;
+  $thumb-color: $terra-cotta;
+  //
+  $upper-background: linear-gradient(to bottom, $upper-color, $upper-color) 100%
+    50% / 100% $track-height no-repeat transparent;
+  $lower-background: linear-gradient(to bottom, $lower-color, $lower-color) 100%
+    50% / 100% $track-height no-repeat transparent;
+
+  // Webkit cannot style progress so we fake it with a long shadow
+  // on the thumb element
+  @function webkit-slider-thumb-shadow($i: 1) {
+    $val: #{$i}px 0 0 -#{($thumb-height - $track-height) / 2} #{$upper-color};
+    @if $i == 1 {
+      @for $k from 2 through 1000 {
+        $val: #{$val}, webkit-slider-thumb-shadow($k);
+      }
+    }
+    @return $val;
+  }

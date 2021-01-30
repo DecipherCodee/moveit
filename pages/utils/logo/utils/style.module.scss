@@ -1,0 +1,38 @@
+.logo {
+  @import "styles/mixins";
+  @include set-layout($mobile-width) {
+    flex-direction: column-reverse;
+    margin-top: 18vw;
+  }
+  @include set-layout($mobile-width - 250px) {
+    flex-direction: column-reverse;
+    margin-top: 25vw;
+  }
+  z-index: 1;
+  display: flex;
+  position: fixed;
+  align-self: center;
+  transform: translate(0) scale(1);
+  transition: transform 0.6s ease;
+  &.resize {
+    @include set-layout($mobile-width) {
+      transform: translate(35vw, 38vh) scale(0.3);
+    }
+    @include set-layout($cell-width) {
+      transform: translate(32vw, 40vh) scale(0.3);
+    }
+    transform: translate(36vw, 38vh) scale(0.3);
+    transition: transform 0.6s ease;
+  }
+
+  .menuWrapper {
+    @include set-layout($mobile-width) {
+      margin-left: 0;
+    }
+    margin-left: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+}

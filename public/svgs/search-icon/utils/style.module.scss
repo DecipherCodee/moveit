@@ -1,0 +1,13 @@
+.search {
+  @import "styles/variables";
+  height: 1.4rem;
+  width: 1.4rem;
+  stroke: $sand-brown;
+  position: absolute;
+  left: 1.2rem;
+  z-index: 1;
+
+  .handle {
+    fill: $sand-brown;
+  }
+}

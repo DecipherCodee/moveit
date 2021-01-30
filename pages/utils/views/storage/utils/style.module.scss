@@ -1,0 +1,83 @@
+.storage {
+  @import "../../../styles";
+  @include view-styles(fadeInStorage, fadeOutStorage);
+  overflow: hidden;
+
+  .sheet {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 38.4px;
+
+    .search {
+      width: 100%;
+      height: 100%;
+
+      .location {
+        @include input-styles(
+          $shadow: none,
+          $background: $homestead-red,
+          $margin-bottom: none,
+          $padding: 0 3.2rem,
+          $width: 100%,
+          $height: 100%,
+          $font-size: 1rem
+        );
+      }
+      .lists {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: 0.8rem;
+        overflow-y: scroll;
+        height: 75vh;
+        &::-webkit-scrollbar {
+          display: none;
+          width: 0;
+        }
+
+        .header {
+          margin: 0 1.4rem;
+          margin-bottom: 0.6rem;
+          color: $homestead-red;
+          font-size: 0.9rem;
+          padding-bottom: 8px;
+          border-bottom: $homestead-red solid 0.01px;
+        }
+        .address {
+          margin: 0 1.4rem;
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          min-height: 2rem;
+          padding-bottom: 15px;
+          border-bottom: $homestead-red solid 0.01px;
+          margin-bottom: 1rem;
+          cursor: pointer;
+        }
+        .body {
+          @include box-styles(
+            $inset-shadow: true,
+            $margin-bottom: 1,
+            $min-height: 7.2,
+            $padding: (
+              "top": 0.8,
+              "bottom": 1,
+              "left": 1.8,
+              "right": 0.8,
+            )
+          );
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          &::after {
+            content: "";
+            width: 3px;
+            background: $homestead-red;
+            border-radius: 16px;
+          }
+        }
+      }
+    }
+  }
+}

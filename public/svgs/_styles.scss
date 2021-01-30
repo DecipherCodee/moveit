@@ -1,0 +1,44 @@
+@import "styles/mixins";
+
+@mixin svg-styles($isPrice: false) {
+  @if $isPrice {
+    svg {
+      height: 7.8rem;
+      width: 7.8rem;
+    }
+  } @else {
+    @include set-layout($mobile-width) {
+      width: unset;
+      height: 20rem;
+    }
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 1.8rem;
+      width: 1.8rem;
+      fill: none;
+      stroke: $puce;
+      cursor: pointer;
+      &.isSelected,
+      &:hover {
+        fill: $puce;
+      }
+    }
+  }
+}
+@mixin shadow-styles {
+  color: $chilean-fire;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+
+  svg {
+    height: 12rem;
+    width: 12rem;
+  }
+}

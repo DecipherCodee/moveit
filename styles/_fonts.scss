@@ -1,0 +1,41 @@
+@font-face {
+  font-family: "Lucida Grande";
+  src: local("Lucida Grande"), local("LucidaGrande"),
+    url("../public/fonts/LucidaGrande.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lucida Grande";
+  src: local("Lucida Grande Bold"), local("LucidaGrande-Bold"),
+    url("../public/fonts/LucidaGrande-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lucida Grande UI";
+  src: local("Lucida Grande UI Regular"), local("LucidaGrandeUI"),
+    url("../public/fonts/LucidaGrandeUI.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lucida Grande UI";
+  src: local("Lucida Grande UI Bold"), local("LucidaGrandeUI-Bold"),
+    url("../public/fonts/LucidaGrandeUI-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeroknite";
+  src: local("Aeroknite"), url("../public/fonts/Aeroknite.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

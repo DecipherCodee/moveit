@@ -1,0 +1,43 @@
+@use "sass:map";
+@import "styles/variables";
+
+@mixin set-layout($width, $media: max-width) {
+  @media ($media: $width) {
+    @content;
+  }
+}
+@mixin box-styles(
+  $shadow: 0px 8px 15px rgba(0, 0, 0, 0.1),
+  $radius: 48px,
+  $all-borders: true,
+  $inset-shadow: false,
+  $padding: (
+    "top": 1.8,
+    "bottom": 1.8,
+    "left": 1.8,
+    "right": 1.8,
+  ),
+  $margin-bottom: 1.8,
+  $min-height: 20
+) {
+  @if $inset-shadow {
+    box-shadow: inset 0 0.5px 3px 0 rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    min-height: #{$min-height}rem;
+    margin-bottom: #{$margin-bottom}rem;
+    padding: {
+      top: #{map.get($padding, "top")}rem;
+      bottom: #{map.get($padding, "bottom")}rem;
+      left: #{map.get($padding, "left")}rem;
+      right: #{map.get($padding, "right")}rem;
+    }
+  } @else {
+    @if $all-borders {
+      border-radius: $radius;
+    } @else {
+      border-top-left-radius: $radius !important;
+      border-top-right-radius: $radius !important;
+    }
+    box-shadow: $shadow !important;
+  }
+}

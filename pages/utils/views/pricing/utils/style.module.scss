@@ -1,0 +1,87 @@
+.pricing {
+  @import "../../../styles";
+  @import "./";
+  @include view-styles(fadeInLookup, fadeOutLookup, $top: true);
+  overflow: hidden;
+
+  .cost {
+    @include section-styles;
+
+    .aside {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-end;
+
+      .button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .name {
+          margin: 1.8rem 0;
+        }
+        .quote {
+          background: $old-mandarin;
+          padding: 0.5rem 1rem;
+          font-size: 0.6rem;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  .preference {
+    margin-bottom: 1.8rem;
+
+    .aside {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .label {
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+
+        .value {
+          border: solid $sand-brown 2px;
+          width: 2rem;
+          height: 2rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 1.5rem;
+        }
+      }
+      .slider {
+        appearance: none;
+        width: 60%;
+        height: $height;
+        overflow: hidden;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+        &:hover {
+          opacity: 1;
+        }
+        &::-webkit-slider-runnable-track {
+          width: 100%;
+          height: $height;
+          background: $lower-background;
+        }
+        &::-webkit-slider-thumb {
+          position: relative;
+          appearance: none;
+          height: $thumb-height;
+          width: $thumb-height;
+          background: $thumb-color;
+          border-radius: 100%;
+          top: 50%;
+          margin-top: (-$thumb-height/2);
+          box-shadow: webkit-slider-thumb-shadow();
+          transition: background-color 150ms;
+        }
+      }
+    }
+  }
+}

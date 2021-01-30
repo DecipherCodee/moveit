@@ -1,0 +1,24 @@
+.bottomSheet {
+  @import "styles/variables";
+  background: $reddy-brown;
+  height: 200vh;
+  width: 100%;
+  position: fixed;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.8rem;
+  padding-top: 1rem;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.3);
+  &::before {
+    align-self: center;
+    content: "";
+    margin-bottom: 1.8rem;
+    width: 20%;
+    height: 8px;
+    border-radius: 16px;
+    background: $homestead-red;
+  }
+}
