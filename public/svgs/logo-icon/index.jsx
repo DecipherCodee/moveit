@@ -9,7 +9,7 @@ export const useLogoIcon = () => {
     onClick,
     iconVariants,
     reduceSize,
-    increaseSize,
+    onDragEnd,
     animateIcon,
     wrapperStyles,
     appRef,
@@ -26,9 +26,8 @@ export const useLogoIcon = () => {
       className={styles.logoIcon}
       onClick={onClick}
       onMouseDown={reduceSize}
-      onMouseUp={increaseSize}
+      onDragEnd={onDragEnd}
       onTouchStart={reduceSize}
-      onTouchEnd={increaseSize}
     >
       <aside className={wrapperStyles}>
         <Frame />
