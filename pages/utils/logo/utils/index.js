@@ -24,12 +24,11 @@ export const useStore = () => {
   }, [isResized]);
 
   const { useLogoName, useLogoIconStore } = useSVGs();
-  const { useLogoIcon, onMouseMove } = useLogoIconStore();
+  const { useLogoIcon } = useLogoIconStore();
 
   return {
     className: getStyles({ isResized: initResized }),
     styles,
-    onMouseMove,
     Name: useLogoName,
     icon: useLogoIcon(),
     Menu,

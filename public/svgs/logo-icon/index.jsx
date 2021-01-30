@@ -8,12 +8,12 @@ export const useLogoIcon = () => {
     motion,
     onClick,
     iconVariants,
-    reduceSize,
+    onDragStart,
     onDragEnd,
     animateIcon,
     wrapperStyles,
     appRef,
-    dragSetup,
+    dragSetup,onDrag
   } = useStore();
 
   return (
@@ -25,9 +25,9 @@ export const useLogoIcon = () => {
       animate={animateIcon}
       className={styles.logoIcon}
       onClick={onClick}
-      onMouseDown={reduceSize}
+      onDragStart={onDragStart}
       onDragEnd={onDragEnd}
-      onTouchStart={reduceSize}
+      onDrag={onDrag}
     >
       <aside className={wrapperStyles}>
         <Frame />

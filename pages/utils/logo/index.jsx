@@ -1,13 +1,13 @@
 import { useStore } from "./utils";
 
 export const useLogo = () => {
-  const { styles, Name, icon, Menu, onMouseMove, className } = useStore();
+  const { styles, Name, icon, Menu, className } = useStore();
 
   return (
     <main className={className}>
       <Name />
 
-      <aside className={styles.menuWrapper} onMouseMove={onMouseMove}>
+      <aside className={styles.menuWrapper}>
         {icon}
         <Menu />
       </aside>

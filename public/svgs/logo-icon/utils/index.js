@@ -98,7 +98,7 @@ function getWrapperStyles({ isDragged }) {
   const { wrapper, drag } = styles;
   return `${wrapper} ${isDragged && drag}`;
 }
-function reduceSize({ isResized, isDragged, drag }) {
+function onDragStart({ isResized, isDragged, drag }) {
   if (!isResized || isDragged) {
     return;
   }
@@ -171,13 +171,7 @@ function toggleMenu() {
   });
   putView(initScene);
 }
-function increaseSize({ drag }) {
-  drag(false);
-}
-function onMouseMove({ clientX, clientY }) {
-  getNearestElement({ clientX, clientY });
-}
-function onTouchMove({ clientX, clientY }) {
+function onDrag({ clientX, clientY }) {
   getNearestElement({ clientX, clientY });
 }
 function getIconAnimation({ isResized }) {
@@ -206,10 +200,11 @@ export const useStore = () => {
   const { appRef } = MainStore();
 
   return {
+    onDrag,
     wrapperStyles: getWrapperStyles({ isDragged }),
     appRef,
     onDragEnd: onDragEnd.bind(null, { drag: putDrag }),
-    reduceSize: reduceSize.bind(null, {
+    onDragStart: onDragStart.bind(null, {
       isResized: initResized,
       isDragged: initDragged,
       drag: putDrag,
@@ -232,7 +227,5 @@ export const useLogoIconStore = () => ({
   putDrag,
   useMenuContents,
   getMenuStyles,
-  onMouseMove,
-  onTouchMove,
   toggleMenu,
 });
