@@ -13,7 +13,8 @@ export const useLogoIcon = () => {
     animateIcon,
     wrapperStyles,
     appRef,
-    dragSetup,onDrag
+    dragSetup,
+    onDrag,
   } = useStore();
 
   return (

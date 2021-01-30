@@ -179,6 +179,35 @@ function getIconAnimation({ isResized }) {
 }
 function onDragEnd({ drag }) {
   drag(false);
+  if (initResized) {
+    const { moveAccountBack } = AccountStore();
+    const { putBack: moveStorage } = StorageStore();
+    const { putBack: movePricing } = PricingStore();
+    moveAccountBack(true);
+    moveStorage(true);
+    movePricing(true);
+  }
+  if (initResized) {
+    const { putShow: showHeader } = HeaderStore();
+    showHeader(true);
+  }
+  const { putView, initScene } = MainStore();
+  putResize((old) => {
+    const { putResize: resizeLogo } = LogoStore();
+    if (initScene === "home") {
+      resizeLogo(false);
+      return !old;
+    }
+    if (old) {
+      resizeLogo(true);
+    }
+    if (!old) {
+      resizeLogo(false);
+    }
+    return !old;
+  });
+
+  putView(initScene);
 }
 
 export const useStore = () => {
