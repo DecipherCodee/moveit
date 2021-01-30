@@ -43,9 +43,8 @@ async function locateAddress({ target: { innerText: address } }) {
     const result = await getGeocode({ address });
     const { lat, lng } = await getLatLng(result[0]);
 
-    if (lat && lng) {
-      initMap.setView([lat, lng], 14);
-    }
+    initMap.setView([lat, lng], 14);
+
   } catch (error) {
     alert("Error fecthing address -", error);
   }
